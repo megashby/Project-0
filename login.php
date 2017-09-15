@@ -62,7 +62,7 @@ if ($emailfound == true && $matches[$email]== $pass && isset($_POST['email']) &&
 }
 elseif ($emailfound == true && $matches[$email]!= $pass && isset($_POST['email']) && isset($_POST["password"]))
 {
-	echo 'That email already has an account, please put in a new email';
+	echo 'wrong password';
 }
 
 
