@@ -29,8 +29,11 @@ LOGIN2;
 extract ($_POST);
 $email = $_POST["email"];
 $pass = $_POST['password'];
+
 // echo $email;
 // echo $pass;
+// echo "\n";
+
 
 $matches = Array();
 $emailfound = false;
@@ -40,29 +43,36 @@ while (!feof($fh))
 	$line = fgets($fh);
 	$line = trim($line);
 	$line = explode(":", $line);
-	$matches[$line[0] = $line[1]];
-
-	echo($line[0]);
-	echo ";";
-	echo ($line[1]);
+	// echo($line[0]);
+	// echo (";");
+	// echo ($line[1]);
+	// echo "\n";
+	
+	$matches[$line[0]] = $line[1];
 }
 fclose($fh);
 
 foreach ($matches as $key => $value)
 {
-	if ($name == $key)
+	if ($email == $key)
 	{
-		$usernamefound = true;
+		$emailfound = true;
 	}
 }
 if ($emailfound == true && $matches[$email]== $pass && isset($_POST['email']) && isset($_POST["password"]))
 {
+	// echo "YAYAYAYYA";
 	header("Location: ./project.html");
 	exit();
 }
-elseif ($emailfound == true && $matches[$email]!= $pass && isset($_POST['email']) && isset($_POST["password"]))
+if ($emailfound == true && $matches[$email]!= $pass && isset($_POST['email']) && isset($_POST["password"]))
 {
 	echo 'wrong password';
+}
+
+if ($emailfound == false && $email != "" && $pass != "")
+{
+	echo 'there is no account with that username';
 }
 
 
