@@ -63,9 +63,14 @@ foreach ($matches as $key => $value)
 if ($emailfound == true && $matches[$email]== $pass && isset($_POST['email']) && isset($_POST["password"]))
 {
 	// echo "YAYAYAYYA";
-	header("Location: ./logout.html");
+	if ($email == admin1 or admin2)
+		header("Location: ./mainpage2.html");
+		exit;
+	header("Location: ./mainpage.html");
 	exit();
 }
+
+
 if ($emailfound == true && $matches[$email]!= $pass && isset($_POST['email']) && isset($_POST["password"]))
 {
 	echo 'wrong password';
