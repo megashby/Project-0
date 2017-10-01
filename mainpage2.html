@@ -93,7 +93,7 @@
     var textToSave = document.getElementById("inputTextToSave").value;
     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+    var fileNameToSaveAs = document.getElementById("passwd.txt").value;
  
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
@@ -108,7 +108,7 @@
 	
 	function loadFileAsText()
 	{
-    var fileToLoad = document.getElementById("fileToLoad").files[0];
+    var fileToLoad = document.getElementById("passwd.txt").files[0];
  
     var fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent) 
@@ -118,6 +118,8 @@
     };
     fileReader.readAsText(fileToLoad, "UTF-8");
 	}
+	
+	</script>
 	
     <a href="index.html">
         <button type="button"> Logout </button>
