@@ -1,4 +1,5 @@
-megashby:megashby1
+admin1:securepw admin2:thesecurist
+ megashby:megashby1
 clara:clara2
 madeline:madeline3 
 victor.e.mena@gmail.com:iasip 
