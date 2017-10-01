@@ -8,7 +8,7 @@ print <<<LOGIN2
 </head>
 <body>
 
-<p> This is the login page </p>
+<p> Welcome to the LOGIN Page </p>
 <table width = "75%"">
 <form action = "./login.php" method ="post">
 <tr>
@@ -18,7 +18,7 @@ print <<<LOGIN2
 <td> Enter Password </td> <td> <input type = "text" name = "password" size = "30"/></td>
 </tr>
 <tr>
-<td><input type = "submit" value = "Submit"/></td>
+<td><input class = 'submit' type = "submit" value = "Submit"/></td>
 </tr>
 
 </form>
@@ -63,14 +63,9 @@ foreach ($matches as $key => $value)
 if ($emailfound == true && $matches[$email]== $pass && isset($_POST['email']) && isset($_POST["password"]))
 {
 	// echo "YAYAYAYYA";
-	if ($email == admin1 or admin2)
-		header("Location: ./mainpage2.html");
-		exit;
 	header("Location: ./mainpage.html");
 	exit();
 }
-
-
 if ($emailfound == true && $matches[$email]!= $pass && isset($_POST['email']) && isset($_POST["password"]))
 {
 	echo 'wrong password';
