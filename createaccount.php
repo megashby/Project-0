@@ -23,6 +23,7 @@ print<<<CREATE
 </table>
 
 <script type = "text/javascript">
+//function to determine whether email is valid. duplicate in validateEmail.js
 function validateEmail()   
 {  
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.email.value))  
